@@ -25,7 +25,7 @@ sources:
         columns:
           - name: products_id
             description: Primary key
-          - name: purchase_price
+          - name: purchSE_PRICE
             description: the purchase price of the product
 
       - name: ship
@@ -36,7 +36,7 @@ sources:
             description: Primary key
           - name: shipping_fee
             description: the price the customer pays for shipping
-          - name: log_cost
+          - name: logCost
             description: the cost of preparing the parcel in the distribution centre/warehouse
           - name: ship_cost
             description: shipping cost paid by Greenweez to the carrier/logistics provider
@@ -89,7 +89,7 @@ models:
         description: margin = revenue - purchase_cost
         tests:
           - not_null
-      - name: Purchase_cost
+      - name: purchase_cost
         description: purchase_cost = quantity * purchase_price
         tests:
           - not_null
@@ -142,3 +142,18 @@ models:
         description: the cost of preparing the parcel in the distribution centre/warehouse
       - name: ship_cost
         description: shipping cost paid by Greenweez to the carrier/logistics provider
+
+  - name: finantinal_day
+    description: orders operational aggregated by day
+    columns:
+      - name: nb_transactions
+      - name: revenue
+      - name: average_basket
+      - name: average_basket_bis
+      - name: margin
+      - name: operational_margin
+      - name: purchase_cost
+      - name: shipping_fee
+      - name: logcost
+      - name: ship_cost
+      - name: quantity
